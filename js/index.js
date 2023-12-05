@@ -11,9 +11,43 @@ async function fetchData() {
   console.log("data", data);
   console.log("R2D2", data.results[2].eye_color);
 
-  const pTag = document.createElement("p");
-  pTag.textContent = data.results[3].name;
-  document.body.appendChild(pTag);
+  const nameIs = document.createElement("p");
+  nameIs.style.color = "lime";
+  nameIs.style.backgroundColor = "black";
+  nameIs.style.textAlign = "center";
+  nameIs.style.fontFamily = "Luminari, fantasy";
+  nameIs.style.fontSize = "22pt";
+  nameIs.textContent = "The name is  ";
+  const nameTag = document.createElement("span");
+  nameTag.style.color = "red";
+  nameTag.style.fontSize = "40pt";
+  nameIs.style.textAlign = "center";
+
+  nameTag.textContent = data.results[3].name;
+  document.body.append(nameIs);
+  document.body.append(nameTag);
+
+  //eycolor
+  const br = document.createElement("br");
+  document.body.append(br);
+
+  const eyeColorSpan = document.createElement("span");
+  eyeColorSpan.textContent = data.results[2].eye_color;
+  eyeColorSpan.style.color = data.results[2].eye_color;
+  document.body.append(eyeColorSpan);
+
+  const text = document.createElement("p");
+  text.textContent = " is the Eye Color of ";
+  document.body.append(text);
+
+  const spanName = document.createElement("span");
+  //Character
+
+  spanName.textContent = data.results[2].name;
+  spanName.style.color = "blue";
+  spanName.backgroundColor = "black";
+  document.body.append(spanName);
+
   // renderElement(element);
 }
 
