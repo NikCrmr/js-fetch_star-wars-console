@@ -1,4 +1,5 @@
 console.clear();
+// import { enderElement } from "./utils.js";
 
 const url = "https://swapi.dev/api/people";
 
@@ -8,6 +9,12 @@ async function fetchData() {
 
   console.log("response", response);
   console.log("data", data);
+  console.log("R2D2", data.results[2].eye_color);
+
+  const pTag = document.createElement("p");
+  pTag.textContent = data.results;
+  root.appendChild(ptag);
+  // renderElement(element);
 }
 
 fetchData();
