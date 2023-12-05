@@ -12,8 +12,8 @@ async function fetchData() {
   console.log("R2D2", data.results[2].eye_color);
 
   const pTag = document.createElement("p");
-  pTag.textContent = data.results;
-  root.appendChild(ptag);
+  pTag.textContent = data.results[3].name;
+  document.body.appendChild(pTag);
   // renderElement(element);
 }
 
